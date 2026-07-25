@@ -2,13 +2,20 @@
 
 ## 📌 Executive Summary
 Questo progetto dimostra un flusso di lavoro end-to-end per l'analisi delle performance di vendita e della redditività aziendale. 
-Il processo parte dalla modellazione di un database relazionale e dall'estrazione dei dati tramite **SQL**, per poi passare alla modellazione dati, calcolo delle metriche aziendali in **DAX** e visualizzazione interattiva su **Power BI**.
+Il processo parte dalla modellazione di un database relazionale e dall'estrazione dei dati tramite **SQL**, per poi passare alla modellazione dati, al calcolo delle metriche aziendali in **DAX** e alla visualizzazione interattiva su **Power BI**.
+
+---
+
+## 📸 Dashboard Preview
+
+![Sales & Profitability Dashboard](Sales_Profitability_Dashboard)
 
 ---
 
 ## 🛠️ Tech Stack & Strumenti
 * **SQL (MySQL):** DDL per creazione tabelle, DML per popolazione dati e query avanzate (`INNER JOIN`) per estrazione del dataset denormalizzato.
-* **Power BI:** Data Modeling, Time Intelligence in DAX e reportistica interattiva.
+* **Power BI & Power Query:** Data Transformation, modellazione dati e reportistica interattiva con visual design aziendale.
+* **DAX (Data Analysis Expressions):** Calcolo di KPI dinamici (`Total Sales`, `Total Profit`, `Profit Margin %`) e formattazione custom.
 * **GitHub:** Versionamento e documentazione dell'architettura dati.
 
 ---
