@@ -54,9 +54,9 @@ CREATE TABLE Orders (
 ```sql
 INSERT INTO Customers (CustomerID, CustomerName, Region)
 VALUES 
-    (1, 'Marco Rossi', 'Nord'),
-    (2, 'Elena Bianchi', 'Centro'),
-    (3, 'Tech Solutions', 'Sud');
+    (1, 'Marco Rossi', 'North'),
+    (2, 'Elena Bianchi', 'Center'),
+    (3, 'Tech Solutions', 'South');
 
 INSERT INTO Products (ProductID, ProductName, Category)
 VALUES 
@@ -89,7 +89,40 @@ INNER JOIN Products p ON o.ProductID = p.ProductID;
 
 | OrderID | CustomerName | Region | ProductName | Category | Sales | Profit |
 |---|---|---|---|---|---|---|
-| 1001 | Marco Rossi | Nord | Sedia Ergonomica | Furniture | 250.00 | 45.00 |
-| 1004 | Marco Rossi | Nord | Monitor 4K | Technology | 420.00 | 85.00 |
-| 1002 | Elena Bianchi | Centro | Monitor 4K | Technology | 400.00 | 80.00 |
-| 1003 | Tech Solutions | Sud | Sedia Ergonomica | Furniture | 500.00 | 90.00 |
+| 1001 | Marco Rossi | North | Sedia Ergonomica | Furniture | 250.00 | 45.00 |
+| 1004 | Marco Rossi | North | Monitor 4K | Technology | 420.00 | 85.00 |
+| 1002 | Elena Bianchi | Center | Monitor 4K | Technology | 400.00 | 80.00 |
+| 1003 | Tech Solutions | South | Sedia Ergonomica | Furniture | 500.00 | 90.00 |
+
+
+---
+
+## 📐 Business Logic & Formule DAX
+
+Per l'analisi dei dati all'interno di Power BI sono state create misure DAX dedicate per garantire il calcolo corretto dei KPI e una formattazione chiara:
+
+```dax
+-- Totale Vendite
+Total Sales = 
+FORMAT(
+    SUM(sales_extracted_data[Sales]) / 100, 
+    "#,##0.00"
+) & " €"
+
+-- Totale Profitto
+Total Profit = 
+FORMAT(
+    SUM(sales_extracted_data[Profit]), 
+    "#,##0.00"
+) & " €"
+```
+
+---
+
+## 💡 Key Business Insights
+
+* **Performance per Categoria:** La categoria **Technology** guida le vendite complessive con un totale di **820 €**, seguita da **Furniture** con **750 €**.
+
+* **Distribuzione Geografica:** La regione **North** rappresenta il mercato principale con **670 €** di vendite, seguita da **South** (500 €) e **Center** (400 €).
+
+* **Redditività Aziendale:** Il margine di profitto medio si attesta su un ottimo **19,11%**, a fronte di un profitto totale di **300 €** su **1.570 €** di fatturato complessivo.
