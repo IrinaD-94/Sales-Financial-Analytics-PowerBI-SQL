@@ -1,0 +1,5 @@
+OrderID,CustomerName,Region,ProductName,Category,Sales,Profit
+1001,Marco Rossi,Nord,Sedia Ergonomica,Furniture,250.00,45.00
+1004,Marco Rossi,Nord,Monitor 4K,Technology,420.00,85.00
+1002,Elena Bianchi,Centro,Monitor 4K,Technology,400.00,80.00
+1003,Tech Solutions,Sud,Sedia Ergonomica,Furniture,500.00,90.00
