@@ -40,3 +40,49 @@ CREATE TABLE Orders (
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
+```
+
+### 2. Popolamento Dati (DML)
+
+```sql
+INSERT INTO Customers (CustomerID, CustomerName, Region)
+VALUES 
+    (1, 'Marco Rossi', 'Nord'),
+    (2, 'Elena Bianchi', 'Centro'),
+    (3, 'Tech Solutions', 'Sud');
+
+INSERT INTO Products (ProductID, ProductName, Category)
+VALUES 
+    (101, 'Sedia Ergonomica', 'Furniture'),
+    (102, 'Monitor 4K', 'Technology');
+
+INSERT INTO Orders (OrderID, CustomerID, ProductID, Sales, Profit)
+VALUES 
+    (1001, 1, 101, 250.00, 45.00),
+    (1002, 2, 102, 400.00, 80.00),
+    (1003, 3, 101, 500.00, 90.00),
+    (1004, 1, 102, 420.00, 85.00);
+```
+### 3. Query di Estrazione Dati (Data Join)
+
+```sql
+SELECT 
+    o.OrderID,
+    c.CustomerName,
+    c.Region,
+    p.ProductName,
+    p.Category,
+    o.Sales,
+    o.Profit
+FROM Orders o
+INNER JOIN Customers c ON o.CustomerID = c.CustomerID
+INNER JOIN Products p ON o.ProductID = p.ProductID;
+```
+#### Risultato dell'Estrazione:
+
+| OrderID | CustomerName | Region | ProductName | Category | Sales | Profit |
+|---|---|---|---|---|---|---|
+| 1001 | Marco Rossi | Nord | Sedia Ergonomica | Furniture | 250.00 | 45.00 |
+| 1004 | Marco Rossi | Nord | Monitor 4K | Technology | 420.00 | 85.00 |
+| 1002 | Elena Bianchi | Centro | Monitor 4K | Technology | 400.00 | 80.00 |
+| 1003 | Tech Solutions | Sud | Sedia Ergonomica | Furniture | 500.00 | 90.00 |
