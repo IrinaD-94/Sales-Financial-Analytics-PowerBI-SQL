@@ -8,7 +8,7 @@ Il processo parte dalla modellazione di un database relazionale e dall'estrazion
 
 ## 📸 Dashboard Preview
 
-![Sales & Profitability Dashboard](Sales_Profitability_Dashboard.png)
+![Sales & Profitability Dashboard](Sales_Profitability_Dashboard)
 
 ---
 
